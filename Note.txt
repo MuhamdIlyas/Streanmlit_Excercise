@@ -1,0 +1,8 @@
+#Aktifasi conda di terminal
+conda activate main-ds
+
+#Install streamlit di terminal
+pip install streamlit
+
+#Runing streamlit
+streamlit run Latihan_Streamlit_Text_Content.py (streamlit run (nama file))
