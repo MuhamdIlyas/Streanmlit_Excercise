@@ -1,3 +1,5 @@
+# from camera_input_live import camera_input_live
+# from camera import camera
 import pandas as pd
 import datetime
 import streamlit as st
@@ -40,3 +42,7 @@ st.header("Camera Input")
 picture = st.camera_input("Take a picture")
 if picture:
     st.image(picture)
+
+
+# value = camera_input_live()
+# st.image(value)

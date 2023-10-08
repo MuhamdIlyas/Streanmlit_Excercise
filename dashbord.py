@@ -1,9 +1,12 @@
+# mengimpor seluruh library
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
+
+# create_daily_orders_df() digunakan untuk menyiapkan daily_orders_d
 
 
 def create_daily_orders_df(df):
@@ -19,11 +22,15 @@ def create_daily_orders_df(df):
 
     return daily_orders_df
 
+# create_sum_order_items_df() bertanggung jawab untuk menyiapkan sum_orders_items_df
+
 
 def create_sum_order_items_df(df):
     sum_order_items_df = df.groupby("product_name").quantity_x.sum(
     ).sort_values(ascending=False).reset_index()
     return sum_order_items_df
+
+# create_bygender_df() digunakan untuk menyiapkan bygender_df
 
 
 def create_bygender_df(df):
@@ -33,6 +40,8 @@ def create_bygender_df(df):
     }, inplace=True)
 
     return bygender_df
+
+# create_byage_df() merupakan helper function yang digunakan untuk menyiapkan byage_df
 
 
 def create_byage_df(df):
@@ -45,6 +54,8 @@ def create_byage_df(df):
 
     return byage_df
 
+# create_bystate_df() digunakan untuk menyiapkan bystate_df
+
 
 def create_bystate_df(df):
     bystate_df = df.groupby(by="state").customer_id.nunique().reset_index()
@@ -53,6 +64,8 @@ def create_bystate_df(df):
     }, inplace=True)
 
     return bystate_df
+
+# create_rfm_df() bertanggung jawab untuk menghasilkan rfm_df
 
 
 def create_rfm_df(df):
@@ -73,6 +86,7 @@ def create_rfm_df(df):
     return rfm_df
 
 
+# Menyimpan berkas data yang telah dibersihkan.
 all_df = pd.read_csv("all_data.csv")
 
 datetime_columns = ["order_date", "delivery_date"]

@@ -1,5 +1,5 @@
 #Aktifasi conda di terminal
-conda activate main-ds
+conda activate myenv
 
 #Install streamlit di terminal
 pip install streamlit
